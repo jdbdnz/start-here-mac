@@ -1,0 +1,36 @@
+[
+  {
+    "context": "Editor",
+    "bindings": {
+      "alt-up": "editor::AddSelectionAbove",
+      "alt-down": "editor::AddSelectionBelow",
+      "cmd-j": "editor::JoinLines",
+      "cmd-d": "editor::SelectNextMatch",
+      "shift-cmd-d": "editor::SelectAllMatches",
+      "ctrl-cmd-up": "editor::MoveLineUp",
+      "ctrl-cmd-down": "editor::MoveLineDown",
+      "shift-cmd-up": "editor::MoveLineUp",
+      "shift-cmd-down": "editor::MoveLineDown",
+      "shift-cmd-w": "editor::ToggleSoftWrap",
+      "cmd-alt-/": "editor::ToggleBlockComment",
+      "cmd-c c": "editor::DuplicateLineDown"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-p": "command_palette::Toggle",
+      "cmd-t": "file_finder::Toggle",
+      "shift-cmd-right": "pane::SplitRight",
+      "shift-cmd-left": "pane::SplitLeft",
+      "shift-cmd-\\": "pane::RevealInProjectPanel"
+    }
+  },
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      "a": "project_panel::NewFile",
+      "shift-a": "project_panel::NewDirectory"
+    }
+  }
+]
