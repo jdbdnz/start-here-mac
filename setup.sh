@@ -28,4 +28,46 @@ else
     exit 1
 fi
 
+echo "Brewfile installations complete. Starting configurations..."
+
+# Install Oh My Zsh
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+    echo "Installing Oh My Zsh..."
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+else
+    echo "Oh My Zsh is already installed."
+fi
+
+# Configure nvm and install Node 22
+echo "Configuring nvm..."
+export NVM_DIR="$HOME/.nvm"
+
+# Create nvm directory if it doesn't exist
+mkdir -p "$NVM_DIR"
+
+# Add nvm to shell profile if not already present
+if ! grep -q 'NVM_DIR' ~/.zshrc 2>/dev/null; then
+    echo "Adding nvm to ~/.zshrc..."
+    cat >> ~/.zshrc << 'EOF'
+
+# NVM configuration
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+EOF
+fi
+
+# Load nvm for current session
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"
+
+# Install Node 22 and set as default
+echo "Installing Node 22..."
+nvm install 22
+nvm alias default 22
+nvm use 22
+
+echo "Node version: $(node --version)"
+echo "npm version: $(npm --version)"
+
 echo "Setup complete!"
