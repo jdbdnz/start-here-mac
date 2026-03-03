@@ -54,6 +54,8 @@ if ! grep -q 'NVM_DIR' ~/.zshrc 2>/dev/null; then
 export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
 EOF
 fi
 
@@ -61,13 +63,17 @@ fi
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"
 
-# Install Node 22 and set as default
-echo "Installing Node 22..."
-nvm install 22
-nvm alias default 22
-nvm use 22
-
-echo "Node version: $(node --version)"
-echo "npm version: $(npm --version)"
+# Install Node 22 and set as default if nvm is available
+if command -v nvm &> /dev/null; then
+    echo "Installing Node 22..."
+    nvm install 22
+    nvm alias default 22
+    nvm use 22
+    
+    echo "Node version: $(node --version)"
+    echo "npm version: $(npm --version)"
+else
+    echo "Warning: nvm command not found. Please restart your terminal and run 'nvm install 22' manually."
+fi
 
 echo "Setup complete!"
