@@ -21,7 +21,6 @@ brew "uv"
 # Cloud & deployment
 brew "awscli"
 brew "heroku/brew/heroku"
-brew "wrangler"
 brew "netlify-cli"
 cask "google-cloud-sdk"
 

@@ -11,6 +11,12 @@ if ! xcode-select -p &>/dev/null; then
 fi
 
 mkdir -p "$HOME/$GITHUB_USER"
-git clone "https://github.com/$GITHUB_USER/start-here-mac.git" "$HOME/$GITHUB_USER/start-here-mac"
-cd "$HOME/$GITHUB_USER/start-here-mac"
+REPO_DIR="$HOME/$GITHUB_USER/start-here-mac"
+if [ -d "$REPO_DIR" ]; then
+    echo "Repo already exists, pulling latest..."
+    git -C "$REPO_DIR" pull
+else
+    git clone "https://github.com/$GITHUB_USER/start-here-mac.git" "$REPO_DIR"
+fi
+cd "$REPO_DIR"
 ./setup.sh

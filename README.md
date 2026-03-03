@@ -79,7 +79,6 @@ See [Brewfile](./Brewfile) for the full package list.
    - `heroku login`
    - `gcloud init`
    - `netlify login`
-   - `wrangler login`
 5. Authenticate with GitHub Container Registry:
    ```bash
    gh auth token | docker login ghcr.io -u $(gh api user --jq .login) --password-stdin
