@@ -61,7 +61,8 @@ All scripts are safe to re-run.
 | `iterm2/profile.json` | `~/Library/Application Support/iTerm2/DynamicProfiles/profile.json` |
 | `zed/keymap.json` | `~/.config/zed/keymap.json` |
 | `claude/CLAUDE.md` | `~/.claude/CLAUDE.md` |
-| `claude/commands/opportunity.md` | `~/.claude/commands/opportunity.md` |
+| `claude/settings.json` | `~/.claude/settings.json` |
+| `claude/commands/*.md` | `~/.claude/commands/` |
 
 Edit files here, then re-run the relevant `configure/` script to apply on the current machine.
 
