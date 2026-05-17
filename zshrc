@@ -26,3 +26,13 @@ fi
 if [ -f "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc" ]; then
   source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
 fi
+
+# sway shortcuts
+stack() { cd ~/sway/stacks/"$1"; }
+package() { cd ~/sway/packages/"$1"; }
+
+# Open current branch's Linear ticket in the browser
+linear() {
+  local branch=$(git branch --show-current)
+  open "https://linear.app/swayable/issue/${branch:u}"
+}
