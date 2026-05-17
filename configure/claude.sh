@@ -18,7 +18,7 @@ fi
 if command -v claude >/dev/null 2>&1; then
   if ! claude mcp list 2>/dev/null | grep -q '^chrome-devtools'; then
     echo "Adding chrome-devtools MCP server..."
-    claude mcp add chrome-devtools -- npx chrome-devtools-mcp@latest
+    claude mcp add -s user chrome-devtools -- npx chrome-devtools-mcp@latest
   fi
 else
   echo "(claude CLI not found; skipping MCP setup — re-run after installing Claude Code)"
