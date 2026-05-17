@@ -21,7 +21,6 @@ brew "uv"
 # Cloud & deployment
 brew "awscli"
 brew "heroku/brew/heroku"
-brew "netlify-cli"
 cask "gcloud-cli"
 
 # Fonts
@@ -37,7 +36,7 @@ cask "figma"
 cask "firefox"
 cask "google-chrome"
 cask "iterm2"
-cask "linear-linear"
+cask "linear"
 cask "logi-options+"
 cask "mongodb-compass"
 cask "notion"
