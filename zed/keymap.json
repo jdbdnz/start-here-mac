@@ -5,14 +5,14 @@
       "alt-up": "editor::AddSelectionAbove",
       "alt-down": "editor::AddSelectionBelow",
       "cmd-j": "editor::JoinLines",
-      "cmd-d": "editor::SelectNextMatch",
+      "cmd-d": "editor::SelectNext",
       "shift-cmd-d": "editor::SelectAllMatches",
       "ctrl-cmd-up": "editor::MoveLineUp",
       "ctrl-cmd-down": "editor::MoveLineDown",
       "shift-cmd-up": "editor::MoveLineUp",
       "shift-cmd-down": "editor::MoveLineDown",
       "shift-cmd-w": "editor::ToggleSoftWrap",
-      "cmd-alt-/": "editor::ToggleBlockComment",
+      "cmd-alt-/": "editor::ToggleBlockComments",
       "cmd-c c": "editor::DuplicateLineDown"
     }
   },
