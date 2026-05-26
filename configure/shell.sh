@@ -10,5 +10,9 @@ else
     echo "Oh My Zsh already installed."
 fi
 
-echo "Copying zshrc to ~/.zshrc..."
-cp "$SCRIPT_DIR/zshrc" "$HOME/.zshrc"
+if [ -e "$HOME/.zshrc" ]; then
+    echo "~/.zshrc already exists — leaving it alone. To apply repo changes, diff against $SCRIPT_DIR/zshrc manually."
+else
+    echo "Copying zshrc to ~/.zshrc..."
+    cp "$SCRIPT_DIR/zshrc" "$HOME/.zshrc"
+fi

@@ -41,7 +41,7 @@ All scripts are safe to re-run.
 | Script | Notes |
 |---|---|
 | `homebrew.sh` | `brew bundle` skips already-installed packages |
-| `shell.sh` | Oh My Zsh skipped if already installed; zshrc overwritten |
+| `shell.sh` | Oh My Zsh skipped if already installed; `~/.zshrc` only written if missing (to protect machine-specific edits) |
 | `nvm.sh` | nvm and Node skipped if already installed; npm globals reinstalled (slow but harmless) |
 | `git.sh` | Overwrites gitconfig; name/email only prompted if unset |
 | `python.sh` | Skips install if version already present; updates global |
